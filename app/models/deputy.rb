@@ -7,14 +7,16 @@ class Deputy < ActiveRecord::Base
   belongs_to :uf
 
   # validates_numericality_of :age
-  # validates_numericality_of :registration
+  #validates_numericality_of :registration
 
-  # validates :name, presence: true, length: {maximum: 50}
-  # validates :age, presence: true
-  # validates :gender, presence: true
-  # validates :registration, presence: true, uniqueness: true
-  # validates :legislation_situation, presence: true, length: {maximum: 100}
-
+  validates :name, presence: true, length: {maximum: 50}
+  validates :deputy_name, presence: true
+  #validates :age, presence: true
+  validates :email, presence:true
+  validates :gender, presence: true
+  validates :registration, presence: true, numericality: true, uniqueness: true
+  validates :legislation_situation, presence: true, length: {maximum: 100}
+  
 
   def self.parse_deputies
     Uf.populate_ufs
