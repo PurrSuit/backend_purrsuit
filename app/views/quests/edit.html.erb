@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= stylesheet_link_tag "stylesheet.css" %>
+  </head>
+  <body>
+    <img src="<%= asset_path('PurrsuitPersonagem.png') %>" class="other-page purrSuitImage" />
+    <div class="principalSquare">
+    <% if current_user && current_user.admin? %>
+      <ul class="nav nav-pills">
+       <li role="presentation"><%= link_to "Achievements", :achievements_all%></li>
+        <li role="presentation" class="active"><a href="#">Quests</a></li>
+        <li role="presentation"><%= link_to "Logout", logout_path%></li>
+      </ul>
+      <div class="listSquare">
+        <%= form_for :quest, url: quests_update_path, method: :put do | form | %>
+          <%= form.text_field :name, :class => "gamification_fields", :placeholder => "Quest's name"%>
+          <%= form.number_field :experience_points, :class => "gamification_fields", :placeholder => "Experience Points"%>
+          <%= form.text_field :description, :class => "gamification_fields", :placeholder => "Description" %>
+          <%= form.submit "Edit Quest", :class => "gamification_button btn btn-default btn-lg"%>
+        <% end %> 
+        <%= button_to "Cancel", :quests_all, :class => "btn btn-default btn
+-lg gamification_button", :method => :get %>
+      </div>
+      <% else %>
+        <script type="text/javascript">
+          window.location.href="/logout"
+        </script>
+      <% end %>
+    </div>
+  </body>
+</html>
+

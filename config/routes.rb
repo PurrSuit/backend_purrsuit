@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'users/new' => 'users#new'
   post 'users/create' => 'users#create', format: :json
   get 'users/:id' => 'users#show', format: :json
+	get 'users/:id/edit' => 'users#edit', format: :json, as: :users_edit
   post 'users/update' => 'users#update', format: :json, as: :users_update
   delete 'users/delete/:id' => 'users#delete', as: :users_delete
 

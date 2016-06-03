@@ -10,7 +10,13 @@ class QuestsController < ApplicationController
 	end
 
 	def show
-		render json: Quest.find(params[:id])
+		quests = Quest.where(params[:id])
+		@quest = quests.first
+
+    respond_to do |format|
+      format.html
+      format.json {render json: @quest}
+    end
 	end
 
 	def new

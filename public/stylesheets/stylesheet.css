@@ -1,5 +1,18 @@
 @import "bootstrap";
 
+.alert.alert-warning.login{
+	margin-top: 10px;
+	margin-bottom: -50px;	
+}
+.purrSuitImage.other-page{
+	width: 120px;
+	height: 120px;
+	margin-top: -125px;
+	margin-bottom: -100px;
+	float: left;
+	margin-left: 280px;
+}
+
 .option_button{
 	margin-left: 5px;
 }
@@ -50,7 +63,8 @@
 }
 
 .label-default {
-  background-color: #607d8b;
+  background-color: #FF5252;
+	border-color: #CFD8DC;
 }
 
 ::-webkit-scrollbar {
