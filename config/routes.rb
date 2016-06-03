@@ -4,13 +4,19 @@ Rails.application.routes.draw do
   post 'users/create' => 'users#create', format: :json
   get 'users/:id' => 'users#show', format: :json
 	get 'users/:id/edit' => 'users#edit', format: :json, as: :users_edit
+  post 'users/:id/follow_deputy' => 'users#follow_deputy', format: :json
+  post 'users/:id/unfollow_deputy' => 'users#unfollow_deputy', format: :json
   post 'users/update' => 'users#update', format: :json, as: :users_update
   delete 'users/delete/:id' => 'users#delete', as: :users_delete
+
 
   get 'deputies/all' => 'deputies#all', format: :json
   get 'deputies/:id' => 'deputies#show', format: :json
   get 'deputies/search/:toSearch' => 'deputies#search', format: :json
+  get 'users/:id/followed_deputies' => 'deputies#followed_deputies', format: :json
+
   delete 'deputies/:id' => 'deputies#delete', as: :deputies_delete
+
 
   get 'gamifications/all' => 'gamifications#all', format: :json
   get 'gamification/:id' => 'gamifications#show', as: :show_gamification

@@ -75,7 +75,30 @@ class UsersController < ApplicationController
         render json: user
       end
   end
-	
+
+  def followers
+    deputy_id = params[:id]
+    deputy = Deputy.find_by(id: deputy_id)
+    deputy_followers = deputy.followers.count
+    render json: deputy_followers
+  end
+
+  def follow_deputy
+    deputy_id = params[:id]
+    user_id = params[:id]
+    user = User.find_by(id: user_id)
+    deputy = Deputy.find_by(id: deputy_id)
+    user.follow(deputy)
+  end
+
+  def unfollow_deputy
+    deputy_id = params[:id]
+    user_id = params[:id]
+    user = User.find_by(id: user_id)
+    deputy = Deputy.find_by(id: deputy_id)
+    user.unfollow(deputy)
+  end
+
   private
     def get_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
