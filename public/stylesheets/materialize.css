@@ -4849,14 +4849,14 @@ small {
 
 .btn, .btn-large,
 .btn-flat {
+  margin-left: 5px;
+  text-align: center;
   border: none;
   border-radius: 2px;
   display: inline-block;
-  height: 36px;
-  line-height: 36px;
+  height: 20px;
+  width: 60px;
   outline: 0;
-  padding: 0 2rem;
-  text-transform: uppercase;
   vertical-align: middle;
   -webkit-tap-highlight-color: transparent;
 }
@@ -4904,11 +4904,9 @@ small {
   text-decoration: none;
   color: #CFD8DC;
   background-color: #FF5252;
-  text-align: center;
   letter-spacing: .5px;
   transition: .2s ease-out;
   cursor: pointer;
-  margin-left: 43%;
 }
 
 .btn:hover, .btn-large:hover {
