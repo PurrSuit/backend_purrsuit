@@ -1,5 +1,7 @@
 
 class User < ActiveRecord::Base
+  has_merit
+
   acts_as :person
   has_many :active_relationships, class_name: "Relationship",
                                   foreign_key: "follower_id",
