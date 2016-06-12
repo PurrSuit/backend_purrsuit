@@ -2,7 +2,9 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require "codeclimate-test-reporter"
+require 'factory_girl'
 CodeClimate::TestReporter.start
+FactoryGirl.find_definitions
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
