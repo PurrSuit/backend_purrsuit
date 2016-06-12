@@ -16,6 +16,10 @@ gem 'turbolinks'
 
 gem 'jbuilder', '~> 2.0'
 
+gem 'therubyracer'
+
+gem 'execjs'
+
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
@@ -35,23 +39,20 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'rspec-collection_matchers'
-  gem 'factory_girl_rails'
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
 end
 
 group :test do
   gem 'faker'
+  gem 'factory_girl_rails'
+  gem 'cucumber-rails', :require => false
   gem 'capybara'
   gem 'launchy'
   gem 'selenium-webdriver'
 
   # Integration with between TravisCI and Codeclimate
   gem 'codeclimate-test-reporter', require: nil
-end
-
-group :test, :development do
-  gem 'cucumber-rails', :require => false
-  # database_cleaner is not required, but highly recommended
-  gem 'database_cleaner'
 end
 
 group :development do
