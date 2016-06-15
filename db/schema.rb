@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20160615025020) do
 
   create_table "achievements", force: :cascade do |t|
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(version: 20160615025020) do
     t.integer "xp_min"
     t.integer "xp_max"
     t.string  "level_description"
+    t.string  "image_url"
   end
 
   create_table "parties", force: :cascade do |t|
